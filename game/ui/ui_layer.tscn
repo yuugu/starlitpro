@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpx3ej2ty8v5j"]
+
+[ext_resource type="Script" path="res://game/ui/ui_layer.gd" id="1_8yhw3"]
+[ext_resource type="PackedScene" uid="uid://cuuql0xewi8qi" path="res://game/ui/windows/inventory_window.tscn" id="2_18j8l"]
+
+[node name="UiLayer" type="CanvasLayer"]
+script = ExtResource("1_8yhw3")
+
+[node name="InventoryWindow" parent="." instance=ExtResource("2_18j8l")]

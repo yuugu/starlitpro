@@ -1,0 +1,10 @@
+[gd_resource type="AtlasTexture" load_steps=3 format=3 uid="uid://c5hw51gpfc1t6"]
+
+[ext_resource type="Texture2D" uid="uid://c2ovjpjppdakm" path="res://assets/Sprout Lands - UI Pack - Premium pack/UI Sprites/ALL UI ASSETS on one sheet.png" id="1_ml1t5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kymee"]
+atlas = ExtResource("1_ml1t5")
+region = Rect2(228, 243, 25, 27)
+
+[resource]
+atlas = SubResource("AtlasTexture_kymee")

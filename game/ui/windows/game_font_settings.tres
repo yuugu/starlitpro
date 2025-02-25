@@ -1,0 +1,6 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bn5s2aya1hh01"]
+
+[ext_resource type="FontFile" uid="uid://lse3hwyswnc" path="res://assets/Sprout Lands - UI Pack - Premium pack/fonts/pixelFont-7-8x14-sproutLands.ttf" id="1_wj4ih"]
+
+[resource]
+font = ExtResource("1_wj4ih")

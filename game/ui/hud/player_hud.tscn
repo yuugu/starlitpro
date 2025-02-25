@@ -1,0 +1,164 @@
+[gd_scene load_steps=21 format=3 uid="uid://bivri2hgdcv5a"]
+
+[ext_resource type="Script" path="res://game/ui/hud/player_hud.gd" id="1_vmqms"]
+[ext_resource type="Texture2D" uid="uid://c2ovjpjppdakm" path="res://assets/Sprout Lands - UI Pack - Premium pack/UI Sprites/ALL UI ASSETS on one sheet.png" id="2_ubbcl"]
+[ext_resource type="Texture2D" uid="uid://dvu6y7cf0a7wv" path="res://assets/Sprout Lands - UI Pack - Premium pack/UI Sprites/Dialouge UI/Emotes/Teemo premium emote animations sprite sheet-export.png" id="3_47wj7"]
+[ext_resource type="Texture2D" uid="uid://bsnymd4gnx0jf" path="res://assets/Sprout Lands - UI Pack - Premium pack/UI Sprites/Icons/special icons/Hearts.png" id="4_xksdf"]
+[ext_resource type="FontFile" uid="uid://lse3hwyswnc" path="res://assets/Sprout Lands - UI Pack - Premium pack/fonts/pixelFont-7-8x14-sproutLands.ttf" id="5_63beg"]
+[ext_resource type="Texture2D" uid="uid://c1qgbaxiwakyh" path="res://assets/Sprout Lands - UI Pack - Premium pack/UI Sprites/Icons/white icons.png" id="6_86c2i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scl3o"]
+atlas = ExtResource("2_ubbcl")
+region = Rect2(357, 245, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_723nx"]
+atlas = ExtResource("3_47wj7")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr1lp"]
+atlas = ExtResource("3_47wj7")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eq414"]
+atlas = ExtResource("3_47wj7")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82xul"]
+atlas = ExtResource("3_47wj7")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tawrq"]
+atlas = ExtResource("3_47wj7")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_joups"]
+atlas = ExtResource("3_47wj7")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq3dq"]
+atlas = ExtResource("3_47wj7")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gqft3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_723nx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr1lp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eq414")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82xul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tawrq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_joups")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hq3dq")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_la575"]
+atlas = ExtResource("4_xksdf")
+region = Rect2(151, 136, 19, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsw37"]
+atlas = ExtResource("4_xksdf")
+region = Rect2(151, 168, 19, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bba1"]
+atlas = ExtResource("4_xksdf")
+region = Rect2(183, 168, 19, 17)
+
+[sub_resource type="LabelSettings" id="LabelSettings_syueb"]
+font = ExtResource("5_63beg")
+font_size = 22
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1nuu"]
+atlas = ExtResource("6_86c2i")
+region = Rect2(33, 146, 14, 13)
+
+[node name="PlayerHud" type="CanvasLayer"]
+script = ExtResource("1_vmqms")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 248.0
+offset_bottom = 140.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="AvatarContainer" type="MarginContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+
+[node name="AvatarBackground" type="TextureRect" parent="HBoxContainer/AvatarContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_scl3o")
+stretch_mode = 6
+
+[node name="AvatarSprite" type="AnimatedSprite2D" parent="HBoxContainer/AvatarContainer/AvatarBackground"]
+position = Vector2(60, 60)
+scale = Vector2(1.5, 1.458)
+sprite_frames = SubResource("SpriteFrames_gqft3")
+animation = &"normal"
+autoplay = "normal"
+frame_progress = 0.422122
+
+[node name="StatsContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 12
+
+[node name="HeartsContainer" type="HBoxContainer" parent="HBoxContainer/StatsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="HeartFullContainer1" type="Control" parent="HBoxContainer/StatsContainer/HeartsContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="HeartFull1" type="Sprite2D" parent="HBoxContainer/StatsContainer/HeartsContainer/HeartFullContainer1"]
+texture = SubResource("AtlasTexture_la575")
+centered = false
+
+[node name="HeartFullContainer2" type="Control" parent="HBoxContainer/StatsContainer/HeartsContainer"]
+custom_minimum_size = Vector2(16, 32)
+layout_mode = 2
+
+[node name="HeartFull2" type="Sprite2D" parent="HBoxContainer/StatsContainer/HeartsContainer/HeartFullContainer2"]
+texture = SubResource("AtlasTexture_gsw37")
+centered = false
+
+[node name="HeartHalfContainer" type="Control" parent="HBoxContainer/StatsContainer/HeartsContainer"]
+custom_minimum_size = Vector2(16, 32)
+layout_mode = 2
+
+[node name="HeartHalf" type="Sprite2D" parent="HBoxContainer/StatsContainer/HeartsContainer/HeartHalfContainer"]
+texture = SubResource("AtlasTexture_7bba1")
+centered = false
+
+[node name="StaminaValue" type="Label" parent="HBoxContainer/StatsContainer"]
+layout_mode = 2
+text = "1/20"
+label_settings = SubResource("LabelSettings_syueb")
+
+[node name="EquippedToolContainer" type="Control" parent="HBoxContainer/StatsContainer"]
+layout_mode = 2
+
+[node name="EquippedToolIcon" type="TextureRect" parent="HBoxContainer/StatsContainer/EquippedToolContainer"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_x1nuu")

@@ -1,0 +1,10 @@
+[gd_resource type="AtlasTexture" load_steps=3 format=3 uid="uid://br2ul41ihfdfo"]
+
+[ext_resource type="Texture2D" uid="uid://cbmxyehli7ljb" path="res://assets/Sprout Lands - Sprites - premium pack/Objects/Items/tools-n-meterial-items.png" id="1_pnep7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac5la"]
+atlas = ExtResource("1_pnep7")
+region = Rect2(32, 0, 16, 16)
+
+[resource]
+atlas = SubResource("AtlasTexture_ac5la")
